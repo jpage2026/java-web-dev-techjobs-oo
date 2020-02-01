@@ -1,4 +1,4 @@
-package org.launchcode.techjobs_oo;
+package org.launchcode.techjobs_oo.main;
 
 import java.util.Objects;
 
@@ -60,16 +60,17 @@ public class Job {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        if(name.equals("") || name.equals(null)){
+            this.name = "Data Not Available";
+        }
+        else{
+            this.name = name;
+        }
     }
 
     public Employer getEmployer() {
@@ -77,7 +78,12 @@ public class Job {
     }
 
     public void setEmployer(Employer employer) {
-        this.employer = employer;
+        if(employer.equals("") || employer.equals(null)){
+            employer.setValue("Data Not Available");
+        }
+        else{
+            this.employer = employer;
+        }
     }
 
     public Location getLocation() {
@@ -85,7 +91,12 @@ public class Job {
     }
 
     public void setLocation(Location location) {
-        this.location = location;
+        if(location.equals("") || location.equals(null)){
+            location.setValue("Data Not Available");
+        }
+        else{
+            this.location = location;
+        }
     }
 
     public PositionType getPositionType() {
@@ -93,7 +104,12 @@ public class Job {
     }
 
     public void setPositionType(PositionType positionType) {
-        this.positionType = positionType;
+        if(positionType.equals("") || positionType.equals(null)){
+            positionType.setValue("Data Not Available");
+        }
+        else{
+            this.positionType = positionType;
+        }
     }
 
     public CoreCompetency getCoreCompetency() {
@@ -101,6 +117,36 @@ public class Job {
     }
 
     public void setCoreCompetency(CoreCompetency coreCompetency) {
-        this.coreCompetency = coreCompetency;
+        if(coreCompetency.equals("") || coreCompetency.equals(null)){
+            coreCompetency.setValue("Data Not Available");
+        }
+        else{
+            this.coreCompetency = coreCompetency;
+        }
     }
+    @Override
+    public String toString() {
+//        public void setID()
+//        if(getId() == 0){
+//            this.getId() = "Data Not Available";
+//        }
+//        if(getEmployer() == null || getEmployer().equals("")){
+//            return "Employer: Data Not Available";
+//        }
+//        if(getLocation() == null || getLocation().equals("")){
+//            return "Location: Data Not Available";
+//        }
+//        if(getPositionType() == null || getPositionType().equals(" ")){
+//            return "PositionType: Data Not Available";
+//        }
+//        if(getCoreCompetency() == null || getCoreCompetency().equals("  ")){
+//            return"Core Competency: Data Not Available";
+//        }
+//        else {
+            return "\n Id:" + getId() + "\n Employer:" + getEmployer() + "\n Location:" + getLocation() + "\n Position:" + getPositionType() +
+                    "\n Core Competency:" + getCoreCompetency() + "\n";
+        }
+
+
+
 }
