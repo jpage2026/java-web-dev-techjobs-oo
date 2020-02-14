@@ -4,7 +4,7 @@ import java.util.Objects;
 
 abstract class JobField {
         private int id;
-        private static int nextId = 1;
+        private static int nextId = +1;
         private String value;
 
         public JobField() {
